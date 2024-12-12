@@ -18,3 +18,6 @@ Follow the instructions in the README.md of each project to understand its purpo
 - Continuously improve and document each project.
 - Share insights and challenges faced during development.
 - Feel free to explore, fork, or suggest improvements!
+  
+The inspiration for the project is taken from the following website: <br>
+(https://roadmap.sh/projects/task-tracker)
