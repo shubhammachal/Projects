@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+{% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <div class="results">
+        <h3>Results:</h3>
+        <p>Text: <strong>{{ text }}</strong></p>
+        <p>Word count: <strong>{{ words }}</strong></p>
+        <p>Character count: <strong>{{ char_count }}</strong></p>
+    </div>
