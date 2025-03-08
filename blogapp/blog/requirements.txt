@@ -2,7 +2,7 @@
 Django==4.2.7
 python-dotenv==1.0.0
 psycopg2-binary==2.9.6  # PostgreSQL adapter
-Pillow==10.0.1  # For image handling
+#Pillow==10.0.1  # For image handling
 
 # UI and forms
 django-crispy-forms==2.0
