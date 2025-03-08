@@ -1,0 +1,20 @@
+# Core dependencies
+Django==4.2.7
+python-dotenv==1.0.0
+psycopg2-binary==2.9.6  # PostgreSQL adapter
+Pillow==10.0.1  # For image handling
+
+# UI and forms
+django-crispy-forms==2.0
+crispy-bootstrap5==0.7
+
+# Markdown support for blog posts
+markdown==3.4.4
+
+# Development and testing
+flake8==6.1.0
+django-debug-toolbar==4.2.0
+
+# Production
+gunicorn==21.2.0
+whitenoise==6.5.0
