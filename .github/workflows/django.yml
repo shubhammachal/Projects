@@ -38,9 +38,20 @@ jobs:
     - name: Create deployment package
       working-directory: ./blogapp/blog
       run: |
-        mkdir -p deployment
-        cp -r ./* deployment/
-        pip freeze > deployment/requirements-freeze.txt
+        mkdir -p ../deployment
+        cp -r $(ls -A | grep -v "deployment") ../deployment/
+        pip freeze > ../deployment/requirements-freeze.txt
+          
+    - name: Archive deployment package
+      working-directory: ./blogapp
+      run: |
+        tar -czvf django-blog-${{ github.sha }}.tar.gz deployment/
+          
+    - name: Upload deployment artifact
+      uses: actions/upload-artifact@v4
+      with:
+          name: django-blog-deployment
+          path: ./blogapp/django-blog-${{ github.sha }}.tar.gz
         
     - name: Archive deployment package
       working-directory: ./blogapp/blog
