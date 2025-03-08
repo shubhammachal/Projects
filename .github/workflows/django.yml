@@ -10,7 +10,7 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [3.13]
+        python-version: [3.11]  # Changed from 3.13 to 3.11 for better compatibility
     steps:
     - uses: actions/checkout@v4
     
@@ -29,3 +29,26 @@ jobs:
       working-directory: ./blogapp/blog
       run: |
         python manage.py test
+        
+    - name: Collect static files
+      working-directory: ./blogapp/blog
+      run: |
+        python manage.py collectstatic --noinput
+        
+    - name: Create deployment package
+      working-directory: ./blogapp/blog
+      run: |
+        mkdir -p deployment
+        cp -r ./* deployment/
+        pip freeze > deployment/requirements-freeze.txt
+        
+    - name: Archive deployment package
+      working-directory: ./blogapp/blog
+      run: |
+        tar -czvf django-blog-${{ github.sha }}.tar.gz deployment/
+        
+    - name: Upload deployment artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: django-blog-deployment
+        path: ./blogapp/blog/django-blog-${{ github.sha }}.tar.gz
