@@ -33,7 +33,7 @@ jobs:
         
     - name: Test with pytest
       run: |
-        pytest tests/
+        pytest flask_app/tests/
         
     - name: Generate coverage report
       run: |
