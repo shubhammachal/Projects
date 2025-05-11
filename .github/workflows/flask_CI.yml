@@ -64,28 +64,21 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        
-        - name: Create deployment package
-        run: |
-          mkdir -p deployment
       
-          # Copy application and tests
-          cp -r flask_app deployment/
-          cp -r flask_app/tests deployment/
-          cp flask_app/requirements.txt deployment/
-      
-          # Create frozen requirements for reproducible builds
-          pip freeze > deployment/requirements-freeze.txt
-      
-          # Add a simple startup script
-          cat << 'EOF' > deployment/start.sh
-        #!/bin/bash
-        export FLASK_APP=flask_app/app.py
-        flask run --host=0.0.0.0
-        EOF
-        
-            chmod +x deployment/start.sh
-      
+    - name: Create deployment package
+      run: |
+        mkdir -p deployment
+          
+        # Copy application and tests
+        cp -r flask_app deployment/
+        cp -r flask_app/tests deployment/
+        cp flask_app/requirements.txt deployment/
+          
+        # Create frozen requirements for reproducible builds
+        pip freeze > deployment/requirements-freeze.txt
+          
+        # Add a simple startup script
+        cat << 'EOF' > deployment/start.sh
         
     - name: Archive deployment package
       run: |
