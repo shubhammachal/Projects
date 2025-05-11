@@ -79,7 +79,12 @@ jobs:
           
         # Add a simple startup script
         cat << 'EOF' > deployment/start.sh
-        
+        #!/bin/bash
+        export FLASK_APP=flask_app/app.py
+        flask run --host=0.0.0.0
+        EOF
+            
+                chmod +x deployment/start.sh
     - name: Archive deployment package
       run: |
         tar -czvf flask-app-${{ github.sha }}.tar.gz deployment/
