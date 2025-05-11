@@ -38,7 +38,7 @@ jobs:
         
     - name: Generate coverage report
       run: |
-        coverage run -m pytest tests/
+        coverage run -m pytest flask_app/tests/
         coverage report
         coverage xml
         
