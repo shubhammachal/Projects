@@ -17,7 +17,7 @@ Follow the instructions in the README.md of each project to understand its purpo
 - Expand this repository with more projects in diverse domains.
 - Continuously improve and document each project.
 - Share insights and challenges faced during development.
-- Feel free to explore, fork, or suggest improvements!
+- Feel free to explore, fork, or any suggestions.
   
 The inspiration for some of the project is taken from the following website: <br>
 (https://roadmap.sh/projects/task-tracker)
