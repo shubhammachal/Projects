@@ -29,7 +29,7 @@ jobs:
       
       # Step 4: Push Django Docker image
       - name: Push Blog (Django) Docker image
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/master'
         run: |
           docker tag blog-app:${{ github.sha }} ${{ secrets.DOCKER_HUB_USERNAME }}/blog-app:${{ github.sha }}
           docker push ${{ secrets.DOCKER_HUB_USERNAME }}/blog-app:${{ github.sha }}
@@ -44,7 +44,7 @@ jobs:
       
       # Step 6: Push Flask Docker image
       - name: Push Flask Docker image
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/master'
         run: |
           docker tag flask-app:${{ github.sha }} ${{ secrets.DOCKER_HUB_USERNAME }}/flask-app:${{ github.sha }}
           docker push ${{ secrets.DOCKER_HUB_USERNAME }}/flask-app:${{ github.sha }}
