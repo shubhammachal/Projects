@@ -14,7 +14,7 @@ Each project is organized in its own folder with a dedicated README.md file that
 Navigate to the folder of a specific project to view its code and documentation.
 Follow the instructions in the README.md of each project to understand its purpose and functionality.
 ### Future Goals
-- Expand this repository with more projects in diverse domains.
+- Expand this repository with more projects in multiple domains.
 - Continuously improve and document each project.
 - Share insights and challenges faced during development.
 - Feel free to explore, fork, or any suggestions.
