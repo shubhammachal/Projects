@@ -24,8 +24,8 @@ jobs:
       # Step 3: Build Django Docker image
       - name: Build Blog (Django) Docker image
         run: |
-          cd blogapp  # Navigate to Django app folder
-          docker build -t blogapp/blog:${{ github.sha }} .
+          cd blogapp/blog  # Navigate to Django app folder
+          docker build -t:${{ github.sha }} .
       
       # Step 4: Push Django Docker image
       - name: Push Blog (Django) Docker image
