@@ -5,12 +5,15 @@
     - name: update apt cache
       apt:
         update_cache: yes
+      when: ansible_disribution in ['Ubuntu', 'Debian']
     - name: install apache2 package
       apt: 
         name: apache2
         state: latest
+      when: ansible_disribution in ['Ubuntu', 'Debian']
 
     - name: add php support for apache2
       apt:
         name: libapache2-mod-php
         state: latest
+      when: ansible_disribution in ['Ubuntu', 'Debian']
